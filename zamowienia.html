@@ -6,8 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabryka cukierków</title>
     <link rel="stylesheet" href="styl10.css">
+
+    <script>
+
+        function mamale()
+        {
+            var ksztalt = document.getElementById('ksztalt').value;
+            if(ksztalt==1)
+            {
+                document.getElementById("skrypt").innerHTML="Twoje zamówienie to cytryna";
+            } 
+            else if (ksztalt==2)
+            {
+                document.getElementById("skrypt").innerHTML="Twoje zamówienie to liść";
+            } 
+            else if (ksztalt==3)
+            {
+                document.getElementById("skrypt").innerHTML="Twoje zamówienie to banan";
+            } 
+            else
+            {
+                document.getElementById("skrypt").innerHTML="Twoje zamówienie to cukierek liść";
+            }
+            
+            var przycisk = document.getElementById('przycisk');
+            var eR = document.getElementById('kolor1').value;
+            var Ge = document.getElementById('kolor2').value;
+            var Be = document.getElementById('kolor3').value;
+           
+            przycisk.style.backgroundColor="rgb("+eR+","+Ge+","+Be+")";
+           
+            
+        }
+
+
+    </script>
+
 </head>
 <body>
+     
     <section id="gora1">
         <a href="zamowienia.html">Zamów cukierki</a>
     </section>
@@ -30,9 +67,9 @@
              R:<input type="number" name="kolor1" id="kolor1">
             G:<input type="number" name="kolor2" id="kolor2">
              B:<input type="number" name="kolor3" id="kolor3">
-            <p> <input type="submit" name="zamowienie" id="zamowienie" value="zamówienie"></p>
-        <p id="skrypt">Twoje zamówienie</p>
-        <input type="button" value="Kolor">
+            <p> <input type="submit" name="zamowienie" id="zamowienie" onclick="mamale()" value="zamówienie"></p>
+        <p id="skrypt">Witaj! Wybierz zakres między 1 a 3.</p>
+        <button id="przycisk">Kolor</button>
     </div>
     </section>
 
